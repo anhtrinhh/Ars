@@ -1,0 +1,29 @@
+.signup-form {
+    width: 100%;
+    box-shadow: 0 0 11px -5px rgba(0,0,0,.7);
+    background: rgba(255,255,255,.7);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    #{&}__description {
+        color: var(--primary-color);
+        margin-bottom: 1.2rem;
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: .3rem;
+        }
+    }
+    .btn-confirm {
+        margin-top: 1rem;
+        text-align: right;
+        button {
+            margin: 0 0 0 .6rem;
+        }
+    }
+    .react-datepicker__triangle {
+        left: 140px !important;
+    }
+    .react-datepicker-popper {
+        z-index: 8 !important;
+    }
+}

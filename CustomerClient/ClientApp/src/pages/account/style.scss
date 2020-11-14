@@ -1,0 +1,111 @@
+@import "../../app/styles/config";
+
+.left-panel {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .card-board {
+    border-bottom: 1px solid #c5c3c3;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    color: var(--primary-color);
+    .customer-avatar {
+      height: 150px;
+      width: 150px;
+      border-radius: 100%;
+      background-repeat: no-repeat;
+      margin: 0 auto 25px;
+      position: relative;
+      border: 1px solid var(--primary-color);
+      background-position: center;
+      background-size: cover;
+      img {
+        height: 148px;
+        width: 148px;
+        border-radius: 100%;
+      }
+      span {
+        width: 42px;
+        height: 36px;
+        font-size: 31px;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        bottom: 17%;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 7px;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+      }
+    }
+    .customer-name {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .info {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+.white-box {
+  padding: 10px 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0;
+}
+.panel {
+  box-shadow: 0 0 4px 1px rgba(158, 153, 158, 0.36);
+  width: 100%;
+  .panel-heading {
+    background: #21ba45;
+    color: #fff;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 12px 20px;
+    }
+  }
+  .panel-body {
+    padding: 1rem;
+    width: 100%;
+    * {
+        color: var(--primary-color) !important;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 22px;
+      font-weight: 400;
+    }
+    button {
+        color: #fff !important;
+    }
+    .no-flight {
+      display: block;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .panel-footer {
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+.modal-inform-content {
+  display: flex;
+  align-items: center;
+  p {
+    margin-left: 1rem;
+  }
+}

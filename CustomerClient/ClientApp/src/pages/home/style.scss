@@ -1,0 +1,15 @@
+@import "../../app/styles/config";
+
+section[role="main"] {
+  position: relative;
+}
+.content-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  @include Responsive(MD) {
+    .booking-mask {
+      position: absolute;
+      top: 2.85rem;
+    }
+  }
+}

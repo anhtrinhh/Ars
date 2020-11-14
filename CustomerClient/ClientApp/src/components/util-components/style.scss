@@ -1,0 +1,88 @@
+.switch-button {
+  display: block;
+  position: relative;
+  width: 2.8rem;
+  height: 1.4rem;
+  > input[type="checkbox"] {
+    display: none;
+  }
+  .background {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 1.2rem;
+    transition: 0.25s;
+    border: 2px solid #eeeeee;
+  }
+  .mask {
+    display: block;
+    position: absolute;
+    width: calc(50% - 4px);
+    height: calc(100% - 4px);
+    background-color: white;
+    box-shadow: 1px 1px 3px silver;
+    border-radius: 50%;
+    left: 2px;
+    top: 2px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  > input[type="checkbox"]:checked + .background {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  > input[type="checkbox"]:checked ~ .mask {
+    left: calc(50% + 2px);
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+  background: var(--light-color);
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+  }
+}
+.react-datepicker {
+  padding: .6rem 0 0 0;
+  #{&}__triangle {
+    border-bottom-color: var(--light-color) !important;
+  }
+  #{&}__header {
+    background: var(--light-color);
+  }
+  #{&}__day,
+  #{&}__day-name {
+    width: 2.4rem;
+    line-height: 2.4rem;
+  }
+  #{&}__navigation {
+    outline: none;
+    top: 1.3rem;
+  }
+  #{&}__current-month {
+    font-size: 1.44rem;
+  }
+}
+.datepicker-custom-header {
+  display: flex;
+  margin: 0 10px;
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  button:first-child {
+    padding: 0 .3rem 0 0;
+  }
+  button:last-child {
+    padding: 0 0 0 .3rem;
+  }
+}
+

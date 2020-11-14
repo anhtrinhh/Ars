@@ -1,0 +1,82 @@
+@import "../../app/styles/config";
+
+.footer-top {
+  background: var(--light-color);
+  #{&}__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1.8rem 0 1.2rem;
+    @include Responsive(SM) {
+      flex-direction: row;
+    }
+  }
+  #{&}__col {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 1rem;
+    @include Responsive(SM) {
+      padding: 0;
+    }
+    li {
+      margin-bottom: 0.7rem;
+      font-size: 1.2rem;
+      a,
+      i {
+        display: inline-block;
+        color: var(--info-color);
+        margin-right: 0.3rem;
+      }
+      .phone-number {
+        font-size: 1.4rem;
+      }
+      p {
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .download-app {
+        display: flex;
+        align-items: center;
+        a {
+          display: block;
+          margin: 0;
+        }
+        i {
+          margin-bottom: 0.2rem;
+        }
+      }
+      &.social i {
+        transition: all 300ms linear;
+      }
+      &.social a:hover i {
+        animation: spin 300ms linear;
+      }
+      &.social a {
+        transition: background 300ms linear;
+      }
+      @keyframes spin {
+        from {
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background: #f2f2f2;
+  font-size: 11px;
+  color: #6d6d6d;
+  text-align: center;
+  padding: 11px 2px;
+  clear: both;
+}

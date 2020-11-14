@@ -1,0 +1,31 @@
+.sub-menu {
+  width: 100%;
+  border: solid 1px #d3d3d3;
+  top: 5.5rem;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  background: var(--light-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-out;
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  #{&}__col {
+    margin: 1.8rem 0 4rem 0;
+    .title {
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+    }
+    li {
+      padding-top: 0.8rem;
+      font-size: 1.1rem;
+    }
+  }
+}

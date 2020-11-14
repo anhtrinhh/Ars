@@ -1,0 +1,106 @@
+@import "../../app/styles/config";
+.slider {
+  position: relative;
+  overflow: hidden;
+  #{&}__shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), transparent);
+  }
+  #{&}__slide {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 56%;
+      @include Responsive(MD) {
+        padding-top: 42%;
+      }
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .slider-content {
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 30px;
+      padding-left: 1.6rem;
+      @include Responsive(MD) {
+        padding: 60px;
+      }
+      a {
+        border: 1px solid var(--light-color);
+        color: var(--light-color);
+        padding: 15px 35px;
+        position: relative;
+        display: inline-block;
+        font-weight: 700;
+        background: transparent;
+        border-radius: 8px;
+        text-align: center;
+        white-space: nowrap;
+      }
+      a:hover {
+        border-color: var(--info-color);
+        color: var(--info-color);
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    color: var(--primary-color);
+    @include Responsive(MD) {
+      display: block;
+    }
+  }
+  .swiper-pagination {
+    display: none;
+    @include Responsive(MD) {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 1.5rem;
+      right: 0;
+      bottom: 25px;
+      width: auto;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      > span {
+        display: block;
+        margin: 0 1px !important;
+        color: var(--primary-color);
+        position: relative;
+        padding: 5px 10px;
+        background-color: hsla(0, 0%, 100%, 0.7);
+        font-size: 12px;
+        font-weight: 700;
+        width: unset;
+        height: unset;
+        border-radius: unset;
+        opacity: 1;
+        border: none;
+        outline: none;
+      }
+      > span:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+      > span:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--light-color);
+      }
+    }
+  }
+}

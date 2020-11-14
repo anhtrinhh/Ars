@@ -1,0 +1,49 @@
+@import "./config";
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hide {
+  display: none;
+}
+a {
+  color: var(--primary-color);
+  &:hover {
+    color: var(--info-color);
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+  background: var(--light-color);
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+  }
+}
+.react-datepicker {
+  padding: 0.6rem 0 0 0;
+  #{&}__triangle {
+    border-bottom-color: var(--light-color) !important;
+  }
+  #{&}__header {
+    background: var(--light-color);
+  }
+  #{&}__day,
+  #{&}__day-name {
+    width: 2.4rem;
+    line-height: 2.4rem;
+  }
+  #{&}__navigation {
+    outline: none;
+    top: 1.3rem;
+  }
+  #{&}__current-month {
+    font-size: 1.44rem;
+  }
+}

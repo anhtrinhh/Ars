@@ -1,0 +1,62 @@
+@import "../../../app/styles/config";
+.header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  .navigation {
+    position: relative;
+    box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: var(--light-color);
+    padding: 0.8rem 0;
+    .desktop-menu {
+      display: none;
+      @include Responsive(MD) {
+        display: block;
+      }
+    }
+    .mobile-menu {
+      display: none;
+      @include Responsive(MD) {
+        display: none !important;
+      }
+    }
+    .mobile-menu.active {
+      display: block;
+    }
+    @include Responsive(MD) {
+      padding: 0;
+    }
+    nav {
+      position: unset;
+      display: flex;
+      align-items: center;
+      padding: 0 1.2rem;
+      @include Responsive(LG) {
+        padding: 0;
+      }
+      .navigation__logo {
+        flex-grow: 1;
+        img {
+          width: 9rem;
+        }
+      }
+      .btn-toggle-menu {
+        display: flex;
+        user-select: none;
+        align-items: center;
+        cursor: pointer;
+        @include Responsive(MD) {
+          display: none;
+        }
+        span {
+          font-size: 1.4rem;
+          margin-right: 0.5rem;
+          color: var(--info-color);
+        }
+      }
+    }
+  }
+}

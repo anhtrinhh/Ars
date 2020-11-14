@@ -1,0 +1,23 @@
+.desktop-menu {
+    > li {
+      display: inline-block;
+      padding: 1.3rem 0;
+      margin-left: 1.8rem;
+      > a {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        border-radius: 2.4rem;
+      }
+    }
+    > li:hover > .sub-menu {
+      visibility: visible;
+      top: 4.06rem;
+      opacity: 1;
+    }
+    > li:hover > a {
+      background: var(--primary-color);
+      color: var(--light-color);
+    }
+  }
+  

@@ -1,0 +1,39 @@
+@import "../../../app/styles/config";
+
+.header-top {
+  position: relative;
+  z-index: 101;
+  display: none;
+  @include Responsive(MD) {
+    display: block;
+  }
+  background: var(--light-color);
+  .container > div {
+    display: flex;
+    padding: 1.2rem 1.2rem 0 1.2rem;
+    ul {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      li {
+        color: var(--primary-color) !important;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-left: 1.5rem;
+        .menu {
+          color: var(--primary-color) !important;
+        }
+      }
+    }
+    .theme-mode {
+      margin-left: 1rem;
+    }
+    @include Responsive(LG) {
+      padding: 1.2rem 0 0 0;
+    }
+    .menu-link > div {
+      padding: .8rem 1.2rem;
+    }
+  }
+}

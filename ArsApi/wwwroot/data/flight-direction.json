@@ -1,0 +1,810 @@
+{
+  "BMV": {
+    "city": "Buon Ma Thuat",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "buon-ma-thuot",
+    "flightplan": {
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      }
+    }
+  },
+  "VCA": {
+    "city": "Can Tho",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "can-tho",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "UIH": {
+        "city": "Quy Nhon",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "quy-nhon"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      }
+    }
+  },
+  "KHH": {
+    "city": "Cao Hung",
+    "country": "empty",
+    "country_2_letter_code": "TW",
+    "slug": "cao-hung",
+    "flightplan": {
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      }
+    }
+  },
+  "VCS": {
+    "city": "Con Dao",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "con-dao",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "VCA": {
+        "city": "Can Tho",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "can-tho"
+      },
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "THD": {
+        "city": "Thanh Hoa",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "thanh-hoa"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      }
+    }
+  },
+  "DLI": {
+    "city": "Da Lat",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "da-lat",
+    "flightplan": {
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      }
+    }
+  },
+  "DAD": {
+    "city": "Da Nang",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "da-nang",
+    "flightplan": {
+      "PXU": {
+        "city": "Pleiku",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "pleiku"
+      },
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "VCA": {
+        "city": "Can Tho",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "can-tho"
+      },
+      "DLI": {
+        "city": "Da Lat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-lat"
+      },
+      "ICN": {
+        "city": "Seoul",
+        "country": "empty",
+        "country_2_letter_code": "KR",
+        "slug": "dat-ve-may-bay-seoul-han-quoc"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "CXR": {
+        "city": "Nha Trang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "nha-trang"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "PRG": {
+        "city": "Prague",
+        "country": "empty",
+        "country_2_letter_code": "CZ",
+        "slug": "prague"
+      },
+      "PQC": {
+        "city": "Phu Quoc",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "phu-quoc"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      },
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "BMV": {
+        "city": "Buon Ma Thuat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "buon-ma-thuot"
+      }
+    }
+  },
+  "TPE": {
+    "city": "Dai Bac",
+    "country": "empty",
+    "country_2_letter_code": "TW",
+    "slug": "dai-bac",
+    "flightplan": {
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      }
+    }
+  },
+  "ICN": {
+    "city": "Seoul",
+    "country": "empty",
+    "country_2_letter_code": "KR",
+    "slug": "dat-ve-may-bay-seoul-han-quoc",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "CXR": {
+        "city": "Nha Trang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "nha-trang"
+      }
+    }
+  },
+  "VDH": {
+    "city": "Dong Hoi",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "dong-hoi",
+    "flightplan": {
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      }
+    }
+  },
+  "HAN": {
+    "city": "Ha Noi",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "ha-noi",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "VDH": {
+        "city": "Dong Hoi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "dong-hoi"
+      },
+      "BMV": {
+        "city": "Buon Ma Thuat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "buon-ma-thuot"
+      },
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "UIH": {
+        "city": "Quy Nhon",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "quy-nhon"
+      },
+      "PQC": {
+        "city": "Phu Quoc",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "phu-quoc"
+      },
+      "ICN": {
+        "city": "Seoul",
+        "country": "empty",
+        "country_2_letter_code": "KR",
+        "slug": "dat-ve-may-bay-seoul-han-quoc"
+      },
+      "CXR": {
+        "city": "Nha Trang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "nha-trang"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "KHH": {
+        "city": "Cao Hung",
+        "country": "empty",
+        "country_2_letter_code": "TW",
+        "slug": "cao-hung"
+      },
+      "DLI": {
+        "city": "Da Lat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-lat"
+      },
+      "VCA": {
+        "city": "Can Tho",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "can-tho"
+      },
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "PXU": {
+        "city": "Pleiku",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "pleiku"
+      },
+      "TPE": {
+        "city": "Dai Bac",
+        "country": "empty",
+        "country_2_letter_code": "TW",
+        "slug": "dai-bac"
+      }
+    }
+  },
+  "HPH": {
+    "city": "Hai Phong",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "hai-phong",
+    "flightplan": {
+      "CXR": {
+        "city": "Nha Trang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "nha-trang"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "UIH": {
+        "city": "Quy Nhon",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "quy-nhon"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "BMV": {
+        "city": "Buon Ma Thuat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "buon-ma-thuot"
+      },
+      "PXU": {
+        "city": "Pleiku",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "pleiku"
+      },
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "VCA": {
+        "city": "Can Tho",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "can-tho"
+      }
+    }
+  },
+  "SGN": {
+    "city": "Ho Chi Minh",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "ho-chi-minh",
+    "flightplan": {
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      },
+      "UIH": {
+        "city": "Quy Nhon",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "quy-nhon"
+      },
+      "THD": {
+        "city": "Thanh Hoa",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "thanh-hoa"
+      },
+      "CXR": {
+        "city": "Nha Trang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "nha-trang"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "PRG": {
+        "city": "Prague",
+        "country": "empty",
+        "country_2_letter_code": "CZ",
+        "slug": "prague"
+      },
+      "PQC": {
+        "city": "Phu Quoc",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "phu-quoc"
+      },
+      "DLI": {
+        "city": "Da Lat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-lat"
+      },
+      "PXU": {
+        "city": "Pleiku",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "pleiku"
+      },
+      "VDO": {
+        "city": "Vân Đồn",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "van-don"
+      },
+      "VDH": {
+        "city": "Dong Hoi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "dong-hoi"
+      },
+      "BMV": {
+        "city": "Buon Ma Thuat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "buon-ma-thuot"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      }
+    }
+  },
+  "CXR": {
+    "city": "Nha Trang",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "nha-trang",
+    "flightplan": {
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "ICN": {
+        "city": "Seoul",
+        "country": "empty",
+        "country_2_letter_code": "KR",
+        "slug": "dat-ve-may-bay-seoul-han-quoc"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      }
+    }
+  },
+  "PQC": {
+    "city": "Phu Quoc",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "phu-quoc",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      }
+    }
+  },
+  "PXU": {
+    "city": "Pleiku",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "pleiku",
+    "flightplan": {
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      }
+    }
+  },
+  "PRG": {
+    "city": "Prague",
+    "country": "empty",
+    "country_2_letter_code": "CZ",
+    "slug": "prague",
+    "flightplan": {
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      }
+    }
+  },
+  "UIH": {
+    "city": "Quy Nhon",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "quy-nhon",
+    "flightplan": {
+      "HPH": {
+        "city": "Hai Phong",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "hai-phong"
+      },
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "VCA": {
+        "city": "Can Tho",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "can-tho"
+      },
+      "VII": {
+        "city": "Vinh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "vinh"
+      }
+    }
+  },
+  "THD": {
+    "city": "Thanh Hoa",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "thanh-hoa",
+    "flightplan": {
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      }
+    }
+  },
+  "VDO": {
+    "city": "Van Don",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "van-don",
+    "flightplan": {
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      }
+    }
+  },
+  "VII": {
+    "city": "Vinh",
+    "country": "empty",
+    "country_2_letter_code": "VN",
+    "slug": "vinh",
+    "flightplan": {
+      "HAN": {
+        "city": "Ha Noi",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ha-noi"
+      },
+      "SGN": {
+        "city": "Ho Chi Minh",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "ho-chi-minh"
+      },
+      "DLI": {
+        "city": "Da Lat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-lat"
+      },
+      "VCS": {
+        "city": "Con Dao",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "con-dao"
+      },
+      "DAD": {
+        "city": "Da Nang",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "da-nang"
+      },
+      "BMV": {
+        "city": "Buon Ma Thuat",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "buon-ma-thuot"
+      },
+      "UIH": {
+        "city": "Quy Nhon",
+        "country": "empty",
+        "country_2_letter_code": "VN",
+        "slug": "quy-nhon"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.svg-bar-icon {
+    width: 30px;
+    fill: var(--primary-color);
+  }
+  
+  .svg-cancel-icon {
+    width: 24px;
+    fill: var(--primary-color);
+  }
+  
+  .svg-map-pinpoint-icon {
+    width: 20px;
+    fill: var(--info-color);
+  }
+  .svg-search-icon {
+    width: 26px;
+    fill: var(--primary-color);
+  }
+  
+  

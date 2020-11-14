@@ -1,0 +1,114 @@
+@import "../../../app/styles/config";
+
+.tab-search {
+  position: relative;
+  padding: 0.6rem 1.2rem 0.8rem 1.2rem;
+  background: var(--light-color);
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0.3rem 0.3rem 0.3rem;
+  @include Responsive(SM) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #{&}__extended {
+    height: 0;
+    overflow: hidden;
+    &.extended{
+      height: auto;
+      overflow: visible;
+    }
+  }
+  #{&}__form {
+    width: 100%;
+    @include Responsive(SM) {
+      width: calc(100% - 13rem);
+    }
+  }
+  #{&}__form-row {
+    display: flex;
+    flex-direction: column;
+    @include Responsive(SM) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  #{&}__form-field--1,
+  #{&}__form-field--2,
+  #{&}__form-field--3,
+  #{&}__form-field--4 {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+  }
+  #{&}__form-field--1 {
+    @include Responsive(SM) {
+      width: calc(50% - 0.5rem);
+    }
+  }
+  #{&}__form-field--2 {
+    @include Responsive(SM) {
+      width: calc(33% - 0.5rem);
+    }
+  }
+  #{&}__form-field--3 {
+    line-height: 40px;
+    label {
+      color: var(--primary-color) !important;
+    }
+    @include Responsive(SM) {
+      width: calc(25% - 0.5rem);
+    }
+  }
+  #{&}__form-field--4 {
+    input {
+      padding: 0.67857143em 2.1em 0.67857143em 1em;
+      line-height: 1.21428571em;
+      color: var(--primary-color) !important;
+      border: 1px solid var(--info-light-color);
+      width: 100%;
+      outline: none;
+      border-radius: .28571429rem;
+    }
+    ::placeholder {
+      color: var(--info-light-color);
+    }
+    @include Responsive(SM) {
+      width: calc(75% - 0.5rem);
+    }
+  }
+  #{&}__dropdown {
+    border: 1px solid var(--info-light-color) !important;
+    .divider.default {
+      color: var(--info-light-color) !important;
+    }
+    .divider {
+      color: var(--primary-color) !important;
+      font-weight: bold !important;
+    }
+    .menu .text {
+      color: var(--primary-color) !important;
+    }
+  }
+  #{&}__input-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  #{&}__submit {
+    position: relative;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+    align-self: flex-end;
+  }
+}

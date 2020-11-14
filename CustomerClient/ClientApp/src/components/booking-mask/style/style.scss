@@ -1,0 +1,56 @@
+@import "../../../app/styles/config";
+
+.booking-mask {
+  position: relative;
+  top: auto;
+  z-index: 10;
+  width: 100%;
+}
+.tab-head {
+  background: var(--info-light-color);
+  padding-top: 0.3rem;
+  @include Responsive(MD) {
+    background: none;
+  }
+  h3 {
+    position: relative;
+    display: inline-block;
+    padding: 0.8rem 1.2rem 0.4rem 3.2rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background: var(--light-color);
+    color: var(--primary-color);
+    span {
+      position: absolute;
+      left: 1.2rem;
+      bottom: 0;
+    }
+  }
+}
+
+.flight-type {
+  display: inline-block;
+  button {
+    background: transparent;
+    color: var(--dark-color);
+    border: 1px solid var(--primary-color);
+    margin: 0;
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 35px;
+    outline: none;
+    border-right: none;
+    cursor: pointer;
+  }
+  button.active {
+    background: var(--primary-color);
+    color: var(--light-color);
+  }
+  button:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  button:last-child {
+    border-radius: 0 4px 4px 0;
+    border-right: 1px solid var(--primary-color);
+  }
+}

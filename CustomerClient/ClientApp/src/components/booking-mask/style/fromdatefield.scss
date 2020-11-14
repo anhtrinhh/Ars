@@ -1,0 +1,15 @@
+.tab-search__form-field--1.no-position {
+  position: unset;
+  .react-datepicker-wrapper {
+    border-radius: .28571429rem;
+    border: 1px solid var(--info-light-color);
+    input {
+      padding: 0.67857143em 2.1em 0.67857143em 1em;
+      line-height: 1.21428571em;
+      color: var(--primary-color);
+    }
+    ::placeholder {
+        color: var(--info-light-color);
+    }
+  }
+}

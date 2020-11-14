@@ -1,0 +1,42 @@
+.booking-step {
+    margin: 2rem 0;
+    .step-item {
+        height: 1.8rem;
+        line-height: 1.8rem;
+        border-radius: .3rem;
+        background: var(--light-color);
+        padding: 0 1rem;
+        color: var(--primary-color);
+        font-weight: bold;
+        .validated {
+            color: rgb(94, 255, 0);
+            display: none;
+            margin-right: .7rem;
+        }
+        .step{
+            margin-right: .7rem;
+            color: var(--primary-color);
+            padding: 0 .3rem;
+            background: var(--light-color);
+            border-radius: 50%;
+        }
+        &.active {
+            background: var(--primary-color);
+            color: var(--light-color);
+        }
+        &.completed {
+            .validated {
+                display: inline;
+            }
+            .step {
+                display: none;
+            }
+        }
+        &.disabled {
+            background: #d6d6d6 !important;
+            .step {
+                background: #d6d6d6;
+            }
+        }
+    }
+}
