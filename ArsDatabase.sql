@@ -145,7 +145,7 @@ GO
 
 -- Tạo bảng Admin(Dành cho quản trị)
 CREATE TABLE AdminAccount(
-	AdminId INT IDENTITY PRIMARY KEY,
+	AdminId VARCHAR(20) PRIMARY KEY,
 	AdminFirstName NVARCHAR(50) NOT NULL,
 	AdminLastName NVARCHAR(50) NOT NULL,
 	AdminPassword VARCHAR(200) NOT NULL,
@@ -154,44 +154,12 @@ CREATE TABLE AdminAccount(
 	AdminEmail VARCHAR(50) NOT NULL UNIQUE,
 	AdminPhoneNumber VARCHAR(20) NOT NULL UNIQUE,
 	AdminGender BIT NOT NULL,
+	AdminRights INT NOT NULL,
 	Salt VARCHAR(100) NOT NULL,
-	CreatorId INT NOT NULL,
+	CreatorId VARCHAR(20) NOT NULL,
 	CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
 	UpdatedAt DATETIME NOT NULL DEFAULT GETDATE(),
 	CONSTRAINT FK_AdminAccount_CreatorId FOREIGN KEY(CreatorId) REFERENCES AdminAccount(AdminId)
-)
-GO
-
--- Tạo bảng ArticleType
-CREATE TABLE ArticleType(
-	ArticleTypeId INT IDENTITY PRIMARY KEY,
-	ArticleTypeName NVARCHAR(50) NOT NULL,
-	CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-	UpdatedAt DATETIME NOT NULL DEFAULT GETDATE()
-)
-GO
-
--- Tạo bảng Article(Bài Viết)
-CREATE TABLE Article(
-	ArticleId INT IDENTITY PRIMARY KEY,
-	ArticleTitle NVARCHAR(100) NOT NULL,
-	ArticleContent NTEXT NOT NULL,
-	ArticleTypeId INT NOT NULL,
-	CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-	UpdatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-	CONSTRAINT FK_Article_ArticleTypeId FOREIGN KEY(ArticleTypeId) REFERENCES ArticleType(ArticleTypeId)
-)
-GO
-
--- Tạo bảng ArticleStaticFile
-CREATE TABLE ArticleFile(
-	ArticleFileId INT IDENTITY PRIMARY KEY,
-	ArticleFileName NVARCHAR(50) NOT NULL,
-	ArticleId INT NOT NULL,
-	ArticleFileType BIT NOT NULL,
-	CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-	UpdatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-	CONSTRAINT FK_ArticleFile_ArticleId FOREIGN KEY(ArticleId) REFERENCES Article(ArticleId)
 )
 GO
 
@@ -334,9 +302,9 @@ AS
 SELECT * FROM AdminAccount
 GO
 
-CREATE PROC sp_getAdminBySignInInfo(@email AS VARCHAR(50))
+CREATE PROC sp_getAdminBySignInInfo(@signin AS VARCHAR(50))
 AS
-SELECT * FROM AdminAccount WHERE AdminEmail = @email
+SELECT * FROM AdminAccount WHERE AdminEmail = @signin OR AdminPhoneNumber = @signin
 GO
 
 CREATE PROC sp_insertCustomer(@customerNo AS VARCHAR(20), @customerFirstName AS NVARCHAR(50), @customerLastName AS NVARCHAR(50), 
@@ -408,6 +376,15 @@ INSERT INTO Ticket(BookingId, TicketClassDetailId, TicketClass, TicketPrice,
 GuestFirstName, GuestLastName, GuestGender, GuestBirthday)
 VALUES (@bookingId, @ticketClassDetailId, @ticketClass, @ticketPrice, @guestFirstName, @guestLastName, @guestGender, @guestBirthday)
 GO
+
+CREATE PROC sp_getTimeSlotByFlightDirection(@startPointId AS VARCHAR(10), @endPointId AS VARCHAR(10))
+AS
+BEGIN
+ SELECT * FROM TimeSlot WHERE EndPointId = @endPointId AND StartPointId = @startPointId
+END
+GO
+
+
 
 ------------------------------------------- THÊM DỮ LIỆU --------------------------------------------
 
@@ -651,6 +628,10 @@ INSERT INTO TicketClassDetail(TicketClassId, FlightId, AdultTicketPrice, ChildTi
 InfantTex, NumberTicket)
 VALUES('BUS', 'AR317', 50, 48, 5, 50, 45, 10, 12)
 
+INSERT INTO AdminAccount(AdminId ,AdminFirstName, AdminLastName, AdminPassword, AdminBirthday, AdminEmail, AdminPhoneNumber, AdminGender, AdminRights, Salt, CreatorId)
+VALUES('9999999999','Admin', 'Account', '1W3iLH6zn1kytETu5tqLBWL9zJM0qqqjoS86xeGLjdc=', '1999-09-09', 'arsadmin@gmail.com', '9999999999', 0, 0, 'wINBg2rrUCMgOohIEOeuGA==', '9999999999')
+
+-- select * from AdminAccount
 -- select * from CustomerAccount
 -- select * from Booking
 -- select * from TicketClassDetail
@@ -658,3 +639,4 @@ VALUES('BUS', 'AR317', 50, 48, 5, 50, 45, 10, 12)
 -- delete from CustomerAccount
 -- delete from Booking
 -- delete from Ticket
+-- delete from AdminAccount

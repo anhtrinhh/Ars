@@ -10,7 +10,7 @@ namespace ArsApi.Models
             InverseCreator = new HashSet<AdminAccount>();
         }
 
-        public int AdminId { get; set; }
+        public string AdminId { get; set; }
         public string AdminFirstName { get; set; }
         public string AdminLastName { get; set; }
         public string AdminPassword { get; set; }
@@ -19,8 +19,9 @@ namespace ArsApi.Models
         public string AdminEmail { get; set; }
         public string AdminPhoneNumber { get; set; }
         public bool AdminGender { get; set; }
+        public int AdminRights { get; set; }
         public string Salt { get; set; }
-        public int CreatorId { get; set; }
+        public string CreatorId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 

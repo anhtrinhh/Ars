@@ -35,7 +35,9 @@ namespace ArsApi
             services.AddCors(options =>
             {
                 options.AddPolicy(name: "ArsApiPolicy", builder =>
-                    builder.WithOrigins("http://localhost:3000")
+                    builder.WithOrigins("http://localhost:3000", "http://localhost:3002",
+                    "https://localhost:44375", "http://localhost:5000", "https://localhost:5001",
+                    "https://localhost:44341", "http://localhost:5002", "https://localhost:5003")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials().Build());
@@ -64,6 +66,10 @@ namespace ArsApi
             services.TryAddScoped<IBookingService, BookingService>();
             services.TryAddScoped<ITicketRepository, TicketRepository>();
             services.TryAddScoped<ITicketService, TicketService>();
+            services.TryAddScoped<IAdminAccountRepository, AdminAccountRepository>();
+            services.TryAddScoped<IAdminAccountService, AdminAccountService>();
+            services.TryAddScoped<ITimeSlotRepository, TimeSlotRepository>();
+            services.TryAddScoped<ITimeSlotService, TimeSlotService>();
             services.TryAddScoped<IMailService, MailService>();
             services.AddDbContext<MSSqlContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ArsDatabase"))

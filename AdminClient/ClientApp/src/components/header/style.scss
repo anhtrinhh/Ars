@@ -1,0 +1,34 @@
+@import "../../config";
+
+.main-header {
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1034;
+  margin-left: 0;
+  transition: margin-left .3s ease-in-out;
+  @include Responsive(SM) {
+    margin-left: 74px;
+  }
+  .btn-open-sidebar {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    i {
+      font-size: 1.2rem;
+    }
+  }
+  .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+    height: 3rem;
+    position: relative;
+  }
+  .navbar-nav {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .dropdown-item {
+      padding: .8rem 1.5rem !important;
+      cursor: pointer;
+    }
+  }
+}

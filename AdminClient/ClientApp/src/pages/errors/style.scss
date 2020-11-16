@@ -1,0 +1,85 @@
+@import "../../config";
+
+.error-wrapper {
+  display: flex;
+  min-height: calc(100vh - 61px);
+  @include Responsive(SM) {
+    min-height: calc(100vh - 56px);
+  }
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 6.2rem;
+    @include Responsive(SM) {
+        font-size: 11rem;
+    }
+    font-weight: 900;
+    background: url(./bg.jpg) no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center
+  }
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #004b94;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: #004b94;
+    font-size: 0.85rem;
+    margin-bottom: 1rem
+  }
+  a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background:  #004b94;
+    display: inline-block;
+    padding: 0.7rem 1.85rem;
+    border-radius: 2.2rem;
+    color: #fff !important;
+    font-weight: 700;
+    box-shadow: 0px 4px 15px -5px  #004b94;
+  }
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(./woff2/woff2_08.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(./woff2/woff2_10.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'), url(./woff2/woff2_13.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'), url(./woff2/woff2_15.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

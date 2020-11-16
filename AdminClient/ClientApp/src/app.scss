@@ -1,0 +1,93 @@
+@import "./config";
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  #sidebar-overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1037;
+  }
+  .content-wrapper {
+    transition: margin-left 0.3s ease-in-out;
+    background: #f4f6f9;
+    min-height: calc(100vh - 57px);
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin: 1rem 0 !important;
+    }
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin: .8rem 0 !important;
+    }
+    .content-header {
+      padding: 1rem 0.5rem;
+      .breadcrumb {
+        background: 0 0;
+        line-height: 1.8rem;
+        margin-bottom: 0;
+        margin-top: .4rem;
+        padding: 0;
+      }
+    }
+    .content {
+      padding: 0 .5rem 1.5rem .5rem;
+    }
+  }
+  &:not(.sidebar-collapse) {
+    .main-header,
+    .content-wrapper {
+      margin-left: 0;
+    }
+    @include Responsive(SM) {
+      .main-header,
+      .content-wrapper {
+        margin-left: 250px;
+      }
+    }
+    #sidebar-overlay {
+      display: block;
+      @include Responsive(SM) {
+        display: none;
+      }
+    }
+  }
+  &.sidebar-collapse {
+    .sidebar {
+      box-shadow: none !important;
+      margin-left: -250px;
+      @include Responsive(SM) {
+        margin-left: 0;
+        width: 5.3rem;
+        overflow: hidden;
+        p {
+          display: none !important;
+        }
+      }
+      .brand-link {
+        span {
+          @include Responsive(SM) {
+            margin-left: -10px;
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    .content-wrapper {
+      margin-left: 0;
+    }
+    @include Responsive(SM) {
+      .content-wrapper {
+        margin-left: 74px;
+      }
+    }
+  }
+}

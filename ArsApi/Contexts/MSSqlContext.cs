@@ -13,9 +13,6 @@ namespace ArsApi.Contexts
         }
 
         public virtual DbSet<AdminAccount> AdminAccount { get; set; }
-        public virtual DbSet<Article> Article { get; set; }
-        public virtual DbSet<ArticleFile> ArticleFile { get; set; }
-        public virtual DbSet<ArticleType> ArticleType { get; set; }
         public virtual DbSet<Booking> Booking { get; set; }
         public virtual DbSet<CustomerAccount> CustomerAccount { get; set; }
         public virtual DbSet<Flight> Flight { get; set; }
@@ -24,20 +21,25 @@ namespace ArsApi.Contexts
         public virtual DbSet<TicketClassDetail> TicketClassDetail { get; set; }
         public virtual DbSet<TimeSlot> TimeSlot { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AdminAccount>(entity =>
             {
                 entity.HasKey(e => e.AdminId)
-                    .HasName("PK__AdminAcc__719FE48813E35B34");
+                    .HasName("PK__AdminAcc__719FE488C3E0DDFA");
 
                 entity.HasIndex(e => e.AdminEmail)
-                    .HasName("UQ__AdminAcc__F2AA7AD9B037B12F")
+                    .HasName("UQ__AdminAcc__F2AA7AD920ED1C8F")
                     .IsUnique();
 
                 entity.HasIndex(e => e.AdminPhoneNumber)
-                    .HasName("UQ__AdminAcc__75CD9DADCB084DB5")
+                    .HasName("UQ__AdminAcc__75CD9DADD8D4611A")
                     .IsUnique();
+
+                entity.Property(e => e.AdminId)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.AdminAvatar)
                     .IsRequired()
@@ -73,6 +75,11 @@ namespace ArsApi.Contexts
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
+                entity.Property(e => e.CreatorId)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Salt)
                     .IsRequired()
                     .HasMaxLength(100)
@@ -87,67 +94,6 @@ namespace ArsApi.Contexts
                     .HasForeignKey(d => d.CreatorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AdminAccount_CreatorId");
-            });
-
-            modelBuilder.Entity<Article>(entity =>
-            {
-                entity.Property(e => e.ArticleContent)
-                    .IsRequired()
-                    .HasColumnType("ntext");
-
-                entity.Property(e => e.ArticleTitle)
-                    .IsRequired()
-                    .HasMaxLength(100);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.HasOne(d => d.ArticleType)
-                    .WithMany(p => p.Article)
-                    .HasForeignKey(d => d.ArticleTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Article_ArticleTypeId");
-            });
-
-            modelBuilder.Entity<ArticleFile>(entity =>
-            {
-                entity.Property(e => e.ArticleFileName)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.HasOne(d => d.Article)
-                    .WithMany(p => p.ArticleFile)
-                    .HasForeignKey(d => d.ArticleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ArticleFile_ArticleId");
-            });
-
-            modelBuilder.Entity<ArticleType>(entity =>
-            {
-                entity.Property(e => e.ArticleTypeName)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<Booking>(entity =>
@@ -190,18 +136,18 @@ namespace ArsApi.Contexts
             modelBuilder.Entity<CustomerAccount>(entity =>
             {
                 entity.HasKey(e => e.CustomerNo)
-                    .HasName("PK__Customer__A4AFBF63915273BD");
+                    .HasName("PK__Customer__A4AFBF635B082829");
 
                 entity.HasIndex(e => e.CustomerEmail)
-                    .HasName("UQ__Customer__3A0CE74CE7FBF16D")
+                    .HasName("UQ__Customer__3A0CE74C7BB4943A")
                     .IsUnique();
 
                 entity.HasIndex(e => e.CustomerIdentification)
-                    .HasName("UQ__Customer__5B12FE72E2A139B9")
+                    .HasName("UQ__Customer__5B12FE7223F5D88E")
                     .IsUnique();
 
                 entity.HasIndex(e => e.CustomerPhoneNumber)
-                    .HasName("UQ__Customer__AEB4E9D9924964AA")
+                    .HasName("UQ__Customer__AEB4E9D920D79833")
                     .IsUnique();
 
                 entity.Property(e => e.CustomerNo)
@@ -340,7 +286,7 @@ namespace ArsApi.Contexts
             modelBuilder.Entity<TicketClass>(entity =>
             {
                 entity.HasIndex(e => e.TicketClassName)
-                    .HasName("UQ__TicketCl__246E05ACA6CC747E")
+                    .HasName("UQ__TicketCl__246E05AC62077000")
                     .IsUnique();
 
                 entity.Property(e => e.TicketClassId)

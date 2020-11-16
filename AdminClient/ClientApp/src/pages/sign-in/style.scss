@@ -1,0 +1,56 @@
+@import "../../config";
+
+.sign-wrapper {
+  background-image: url(./signbg.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 -200px;
+  background-size: cover;
+  height: 100vh;
+  .sign-form {
+    width: 100%;
+    padding: 1.5em 3em !important;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7) !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .message .header {
+      color: #9f3a38 !important;
+    }
+    .header, label, input{
+      color: #636363 !important;
+    }
+    .sign-title {
+      margin-top: 3.5rem !important;
+      font-size: 2.6rem !important;
+      font-weight: 300;
+    }
+    @include Responsive(SM) {
+      width: 50%;
+    }
+    @include Responsive(MD) {
+      width: 30%;
+    }
+    button {
+      width: 100%;
+      font-size: 1.2rem;
+      background: #60c7c1 !important;
+      color: #fff !important;
+    }
+    .signin-icon {
+      width: 7.5rem;
+      height: 7.5rem;
+      background: #60c7c1;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      border-radius: 50%;
+      i {
+        font-size: 4.5rem;
+        color: #fff;
+        margin-top: 2.8rem;
+        margin-left: 1.1rem;
+      }
+    }
+  }
+}
