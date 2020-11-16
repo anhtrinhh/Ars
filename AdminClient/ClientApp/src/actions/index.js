@@ -97,3 +97,26 @@ export function searchFlight(from, to, flightDate) {
         })
     }
 }
+
+export function setRestTimeSlot(timeSlots) {
+    return {
+        type: actionType.SET_REST_TIME_SLOT,
+        timeSlots
+    }
+}
+
+export function getTimeSlot1(fromid, toid, flightdate, token) {
+    return dispatch => {
+        let endpoint = `${env.GET_REST_TIMESLOT_ENDPOINT}/${fromid}/${toid}/${flightdate}`; 
+        dispatch(setSubStore({isShowLoader: true}))
+        return callApi(endpoint, "get", null, {
+            'Authorization': 'Bearer ' + token
+        }).then(res => {
+            dispatch(setRestTimeSlot(res.data))
+            dispatch(setSubStore({isShowLoader: false}))
+        }).catch(err => {
+            console.log(err)
+            dispatch(setSubStore({isShowLoader: false}))
+        })
+    }
+}

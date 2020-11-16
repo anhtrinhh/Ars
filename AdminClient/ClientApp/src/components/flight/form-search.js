@@ -19,7 +19,7 @@ class FormSearch extends React.Component {
             date: date
         });
     }
-    handleChangeFilter = (fromid, toid, date) => {
+    handleChangeFilter = (fromid, toid) => {
         this.setState({
             fromid,
             toid
