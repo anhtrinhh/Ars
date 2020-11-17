@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ArsApi.Models;
 using ArsApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,12 @@ namespace ArsApi.Controllers
                 response.Add(await _service.SearchFlight(to, from, (DateTime)date2));
             }
             return response;
+        }
+        [Authorize]
+        [HttpPost]
+        public async Task<bool> InsertFlight(Flight flight)
+        {
+            return await _service.InsertFlight(flight);
         }
     }
 }

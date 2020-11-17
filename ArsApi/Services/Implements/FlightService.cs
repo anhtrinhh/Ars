@@ -32,5 +32,9 @@ namespace ArsApi.Services.Implements
             }
             return flightList;
         }
+        public async Task<bool> InsertFlight(Flight flight)
+        {
+            return await _repository.InsertFlight(flight);
+        }
     }
 }

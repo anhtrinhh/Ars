@@ -37,5 +37,29 @@ namespace ArsApi.Repositories.Implements
             }
             return null;
         }
+
+        public async Task<bool> InsertFlight(Flight flight)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("flightId", flight.FlightId),
+                new SqlParameter("startPointId", flight.StartPointId),
+                new SqlParameter("endPointId", flight.EndPointId),
+                new SqlParameter("flightDate", flight.FlightDate),
+                new SqlParameter("startTime", flight.StartTime),
+                new SqlParameter("endTime", flight.EndTime),
+                new SqlParameter("flightNote", flight.FlightNote ?? (object) DBNull.Value)
+            };
+            try
+            {
+                await _db.Database.ExecuteSqlRawAsync("sp_insertFlight @flightId, @startPointId, @endPointId, @flightDate," +
+                    "@startTime, @endTime, @flightNote", parameters);
+                return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
+        }
     }
 }

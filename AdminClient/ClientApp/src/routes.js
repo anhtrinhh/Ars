@@ -25,7 +25,7 @@ export const PRIVATE_ROUTES = [
         page: FlightSearch
     },
     {
-        path: "/flight-management/add",
+        path: "/flight-management/add/:step(1|2|3)",
         exact: true,
         page: FlightAdd
     },

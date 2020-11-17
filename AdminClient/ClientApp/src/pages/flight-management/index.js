@@ -23,7 +23,7 @@ class FlightManagement extends React.Component {
                         <h4>Add flight</h4>
                         <div className="row">
                             <div className="col-12">
-                                <Link to={this.props.location.pathname + "/add"}>
+                                <Link to={this.props.location.pathname + "/add/1"}>
                                     <Button>Add flight</Button>
                                 </Link>
                             </div>

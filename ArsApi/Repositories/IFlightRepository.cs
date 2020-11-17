@@ -9,5 +9,6 @@ namespace ArsApi.Repositories
     public interface IFlightRepository
     {
         Task<IEnumerable<Flight>> GetFlightBySearchData(string startPointId, string endPointId, DateTime flightDate);
+        Task<bool> InsertFlight(Flight flight);
     }
 }

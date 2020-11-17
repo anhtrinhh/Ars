@@ -13,15 +13,21 @@ class FlightSlottime extends React.Component {
                 options.push({
                     key: ix,
                     text,
-                    value: val.timeslotId
+                    value: JSON.stringify({
+                        startTime: val.startTime,
+                        endTime: val.endTime
+                    })
                 });
             })
             return options;
         }
         return null;
     }
+    handleChange = (evt, data) => {
+        this.props.onChangeTimeslot(JSON.parse(data.value))
+    }
     render() {
-        let { timeslot } = this.props;
+        let { timeslot, selected } = this.props;
         let options = this.createOption(timeslot);
         return (
             <Form>
@@ -35,6 +41,8 @@ class FlightSlottime extends React.Component {
                             selection
                             icon={null}
                             options={options}
+                            onChange={this.handleChange}
+                            value={selected}
                         />
                     </Form.Field>
                 </Form.Group>

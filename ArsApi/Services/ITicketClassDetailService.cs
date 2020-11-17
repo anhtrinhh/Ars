@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ArsApi.Repositories
+namespace ArsApi.Services
 {
-    public interface ITicketClassDetailRepository
+    public interface ITicketClassDetailService
     {
-        Task<IEnumerable<TicketClassDetail>> GetTicketClassDetailsByFlightId(string flightId);
         Task<bool> InsertTicketClassDetail(TicketClassDetail ticketClassDetail);
     }
 }

@@ -29,5 +29,31 @@ namespace ArsApi.Repositories.Implements
             }
             return null;
         }
+
+        public async Task<bool> InsertTicketClassDetail(TicketClassDetail ticketClassDetail)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("ticketClassId", ticketClassDetail.TicketClassId),
+                new SqlParameter("flightId", ticketClassDetail.FlightId),
+                new SqlParameter("adultTicketPrice", ticketClassDetail.AdultTicketPrice),
+                new SqlParameter("childTicketPrice", ticketClassDetail.ChildTicketPrice),
+                new SqlParameter("infantTicketPrice", ticketClassDetail.InfantTicketPrice),
+                new SqlParameter("adultTex", ticketClassDetail.AdultTex),
+                new SqlParameter("childTex", ticketClassDetail.ChildTex),
+                new SqlParameter("infantTex", ticketClassDetail.InfantTex),
+                new SqlParameter("numberTicket", ticketClassDetail.NumberTicket)
+            };
+            try
+            {
+                await _db.Database.ExecuteSqlRawAsync("sp_insertTicketClassDetail @ticketClassId, @flightId, @adultTicketPrice," +
+                    "@childTicketPrice, @infantTicketPrice, @adultTex, @childTex, @infantTex, @numberTicket", parameters);
+                return true;
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
+        }
     }
 }

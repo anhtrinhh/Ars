@@ -120,3 +120,18 @@ export function getTimeSlot1(fromid, toid, flightdate, token) {
         })
     }
 }
+
+export function setFlightBasicInfo(basicInfo) {
+    return {
+        type: actionType.SET_FLIGHT_BASIC_INFO,
+        basicInfo
+    }
+}
+
+export function setFlightTicketInfo(ticketInfo, index) {
+    return {
+        type: actionType.SET_FLIGHT_TICKET_INFO,
+        ticketInfo,
+        index
+    }
+}

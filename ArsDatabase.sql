@@ -357,9 +357,24 @@ AS
 SELECT * FROM Flight WHERE StartPointId = @startPointId AND EndPointId = @endPointId AND FlightDate = @flightDate AND FlightStatus = 0
 GO
 
+CREATE PROC sp_insertFlight(@flightId AS VARCHAR(20),@startPointId AS VARCHAR(10), @endPointId AS VARCHAR(10), 
+@flightDate AS DATE, @startTime AS TIME, @endTime AS TIME, @flightNote AS NVARCHAR(200))
+AS
+INSERT INTO Flight(FlightId, StartPointId, EndPointId, FlightDate, StartTime, EndTime, FlightNote)
+VALUES(@flightId, @startPointId, @endPointId, @flightDate, @startTime, @endTime, @flightNote)
+GO
+
 CREATE PROC sp_getTicketClassDetailsByFlightId(@flightId AS VARCHAR(20))
 AS
 SELECT * FROM TicketClassDetail WHERE FlightId = @flightId
+GO
+
+CREATE PROC sp_insertTicketClassDetail(@ticketClassId AS VARCHAR(10), @flightId AS VARCHAR(20), @adultTicketPrice AS FLOAT,
+@childTicketPrice AS FLOAT, @infantTicketPrice AS FLOAT, @adultTex AS FLOAT, @childTex AS FLOAT, @infantTex AS FLOAT, @numberTicket AS INT)
+AS
+INSERT INTO TicketClassDetail(TicketClassId, FlightId, AdultTicketPrice, ChildTicketPrice, InfantTicketPrice, 
+AdultTex, ChildTex, InfantTex, NumberTicket)
+VALUES(@ticketClassId, @flightId, @adultTicketPrice, @childTicketPrice, @infantTicketPrice, @adultTex, @childTex, @infantTex, @numberTicket)
 GO
 
 CREATE PROC sp_insertBooking(@bookingId AS VARCHAR(20), @numberAdults AS INT, @numberChildren AS INT, @numberInfants AS INT, 

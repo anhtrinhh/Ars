@@ -62,6 +62,7 @@ namespace ArsApi
             services.TryAddScoped<IFlightRepository, FlightRepository>();
             services.TryAddScoped<IFlightService, FlightService>();
             services.TryAddScoped<ITicketClassDetailRepository, TicketClassDetailRepository>();
+            services.TryAddScoped<ITicketClassDetailService, TicketClassDetailService>();
             services.TryAddScoped<IBookingRepository, BookingRepository>();
             services.TryAddScoped<IBookingService, BookingService>();
             services.TryAddScoped<ITicketRepository, TicketRepository>();

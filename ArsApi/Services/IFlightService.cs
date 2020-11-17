@@ -9,5 +9,6 @@ namespace ArsApi.Services
     public interface IFlightService
     {
         Task<IEnumerable<Flight>> SearchFlight(string startPointId, string endPointId, DateTime flightDate);
+        Task<bool> InsertFlight(Flight flight);
     }
 }
