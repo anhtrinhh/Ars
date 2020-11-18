@@ -46,8 +46,8 @@ namespace ArsApi.Repositories.Implements
                 new SqlParameter("startPointId", flight.StartPointId),
                 new SqlParameter("endPointId", flight.EndPointId),
                 new SqlParameter("flightDate", flight.FlightDate),
-                new SqlParameter("startTime", flight.StartTime),
-                new SqlParameter("endTime", flight.EndTime),
+                new SqlParameter("startTime", flight.StartTimeStr),
+                new SqlParameter("endTime", flight.EndTimeStr),
                 new SqlParameter("flightNote", flight.FlightNote ?? (object) DBNull.Value)
             };
             try

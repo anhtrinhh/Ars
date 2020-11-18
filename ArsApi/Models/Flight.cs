@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace ArsApi.Models
@@ -20,6 +21,10 @@ namespace ArsApi.Models
         public string FlightNote { get; set; }
         public string StartPointId { get; set; }
         public string EndPointId { get; set; }
+        [NotMapped]
+        public string StartTimeStr { get; set; } = null;
+        [NotMapped]
+        public string EndTimeStr { get; set; } = null;
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         [JsonIgnore]

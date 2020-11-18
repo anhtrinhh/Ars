@@ -1,6 +1,7 @@
 import * as actionType from "../constants/action-type";
 import * as env from "../constants/env";
 import callApi from "../utils/api-util";
+import {getShortTimeStr} from "../utils/datetime-utils"
 
 export function setSubStore(data) {
     return {
@@ -133,5 +134,52 @@ export function setFlightTicketInfo(ticketInfo, index) {
         type: actionType.SET_FLIGHT_TICKET_INFO,
         ticketInfo,
         index
+    }
+}
+
+export function insertFlight(flight, ticketClasses, token) {
+    return dispatch => {
+        let data = {
+            flightId: flight.flightid,
+            startPointId: flight.fromid,
+            endPointId: flight.toid,
+            flightDate: flight.date,
+            startTimeStr: getShortTimeStr(flight.time.startTime),
+            endTimeStr: getShortTimeStr(flight.time.endTime),
+            flightNote: flight.note
+        }
+        const header = {
+            'Authorization': 'Bearer ' + token
+        }
+        dispatch(setSubStore({isShowLoader: true}))
+        return callApi(env.INSERT_FLIGHT_ENDPOINT, "post", data, header).then(res => {
+            if(res.data) {
+                if(ticketClasses.length > 0) {
+                    let sc = true;
+                    ticketClasses.forEach(async val => {
+                        val.flightId = flight.flightid;
+                        try {
+                            await callApi(env.INSERT_TICKET_CLASS_DETAIL_ENDPOINT, "post", val, header);
+                        } catch(err) {
+                            sc = false;
+                            console.log(err);
+                        }
+                    });
+                    if(sc) {
+
+                    } else {
+                        
+                    }
+                    dispatch(setSubStore({isShowLoader: false}))
+                } else {
+                    dispatch(setSubStore({isShowLoader: false}))
+                }
+            } else {
+                dispatch(setSubStore({isShowLoader: false}))
+            }
+        }).catch(err => {
+            console.log(err);
+            dispatch(setSubStore({isShowLoader: false}))
+        })
     }
 }

@@ -2,7 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import SummaryBasic from "./summary-basic-info";
 import SummaryTicket from "./summary-ticket-info";
-
+import {Button} from "semantic-ui-react";
+import {insertFlight} from "../../actions";
+import {getShortDateStr} from "../../utils/datetime-utils"
+ 
 class SummaryInfo extends React.Component {
     constructor(props) {
         super(props);
@@ -26,6 +29,22 @@ class SummaryInfo extends React.Component {
             props.history.goBack();
         }
     }
+    handleSubmit = evt => {
+        let {basicInfo, ticketInfo, token, subStore} = this.props;
+        let flight = {...basicInfo};
+        let list = [];
+        if (subStore.showEconomy) {
+            list.push(ticketInfo[0]);
+        }
+        if (subStore.showPremium) {
+            list.push(ticketInfo[1])
+        }
+        if (subStore.showBusiness) {
+            list.push(ticketInfo[2]);
+        }
+        flight.date = getShortDateStr(flight.date);
+        this.props.insertFlight(flight, list, token);
+    }
     render() {
         return (
             <React.Fragment>
@@ -37,6 +56,9 @@ class SummaryInfo extends React.Component {
                     <div className="col-10 mt-4">
                         <SummaryTicket showTicketClass={this.props.location.state}/>
                     </div>
+                    <div className="col-10 mt-3 d-flex justify-content-center">
+                        <Button size="large" color="green" onClick={this.handleSubmit}>Add flight</Button>
+                    </div>
                 </div>
             </React.Fragment>
         )
@@ -45,8 +67,19 @@ class SummaryInfo extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        ticketInfo: state.flightTicketInfo
+        ticketInfo: state.flightTicketInfo,
+        basicInfo: state.flightBasicInfo,
+        token: state.account.jwtToken,
+        subStore: state.subStore
     }
 }
 
-export default connect(mapStateToProps)(SummaryInfo);
+const mapDispatchToProps = dispatch => {
+    return {
+        insertFlight(flight, ticketClasses, token) {
+            dispatch(insertFlight(flight, ticketClasses, token))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryInfo);

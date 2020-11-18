@@ -651,6 +651,7 @@ VALUES('9999999999','Admin', 'Account', '1W3iLH6zn1kytETu5tqLBWL9zJM0qqqjoS86xeG
 -- select * from Booking
 -- select * from TicketClassDetail
 -- select * from Ticket
+-- select * from Flight
 -- delete from CustomerAccount
 -- delete from Booking
 -- delete from Ticket

@@ -5,3 +5,5 @@ export const ADMIN_UPLOAD_FOLDER = "upload/admin";
 export const GET_FLIGHT_DIRECTION_ENDPOINT = "flightdirection";
 export const SEARCH_FLIGHT_ENDPOINT = "flight/search";
 export const GET_REST_TIMESLOT_ENDPOINT = "timeslot/rest";
+export const INSERT_FLIGHT_ENDPOINT = "flight";
+export const INSERT_TICKET_CLASS_DETAIL_ENDPOINT = "ticketclassdetail";
