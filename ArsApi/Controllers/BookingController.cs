@@ -31,6 +31,12 @@ namespace ArsApi.Controllers
             return await _service.GetBookingByCustomerNo(customerNo);
         }
 
+        [HttpGet("{flightId}")]
+        public async Task<IEnumerable<Booking>> GetBookingByFlightId(string flightId)
+        {
+            return await _service.GetBookingByFlightId(flightId);
+        }
+
         [Authorize]
         [HttpPost]
         public async Task<string> InsertBooking(Booking booking)

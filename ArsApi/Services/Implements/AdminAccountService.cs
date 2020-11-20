@@ -36,6 +36,16 @@ namespace ArsApi.Services.Implements
             return admin;
         }
 
+        public async Task<AdminAccount> DeleteAdmin(string adminId)
+        {
+            return await _repository.DeleteAdmin(adminId);
+        }
+
+        public async Task<AdminAccount> EditAdmin(AdminAccount admin)
+        {
+            return await _repository.EditAdmin(admin);
+        }
+
         public string GenerateJWT(AdminAccount admin)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
@@ -58,6 +68,19 @@ namespace ArsApi.Services.Implements
         public async Task<AdminAccount> GetAdminByAdminId(string adminId)
         {
             return await _repository.GetAdminByAdminId(adminId);
+        }
+
+        public async Task<IEnumerable<AdminAccount>> GetAllAdmin()
+        {
+            return await _repository.GetAllAdmin();
+        }
+
+        public async Task<AdminAccount> InsertAdmin(AdminAccount admin)
+        {
+            string salt = AppUtils.CreateRandomSalt();
+            admin.AdminPassword = AppUtils.HashString(admin.AdminPassword, salt);
+            admin.AdminId = AppUtils.CreateRandomString(null, 10);
+            return await _repository.InsertAdmin(admin);
         }
     }
 }

@@ -1,0 +1,28 @@
+.select-time-wrapper {
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .select-time {
+    display: flex;
+    .times {
+      width: calc(50% - 5px);
+      .time {
+        display: flex;
+        align-items: center;
+        .dropdown {
+          min-width: auto !important;
+          flex-grow: 1;
+          .menu {
+            max-height: 6rem !important;
+          }
+        }
+        span {
+          margin: 0 1rem 0 0.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

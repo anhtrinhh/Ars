@@ -16,6 +16,12 @@ namespace ArsApi.Repositories.Implements
         {
             _db = db ?? throw new ArgumentNullException(nameof(db));
         }
+
+        public async Task<Flight> GetFlightByFlightId(string flightId)
+        {
+            return await _db.Flight.FindAsync(flightId);
+        }
+
         public async Task<IEnumerable<Flight>> GetFlightBySearchData(string startPointId, string endPointId, DateTime flightDate)
         {
             var parameters = new SqlParameter[]
@@ -38,6 +44,13 @@ namespace ArsApi.Repositories.Implements
             return null;
         }
 
+        public async Task<IEnumerable<Flight>> GetFlightBySearchData2(string startPointId, string endPointId, DateTime flightDate)
+        {
+            var flights = _db.Flight.Where(f => f.StartPointId == startPointId && f.EndPointId == endPointId && f.FlightDate == flightDate);
+            return await flights.ToListAsync();
+
+        }
+
         public async Task<bool> InsertFlight(Flight flight)
         {
             var parameters = new[]
@@ -54,6 +67,24 @@ namespace ArsApi.Repositories.Implements
             {
                 await _db.Database.ExecuteSqlRawAsync("sp_insertFlight @flightId, @startPointId, @endPointId, @flightDate," +
                     "@startTime, @endTime, @flightNote", parameters);
+                return true;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
+        }
+
+        public async Task<bool> UpdateFlightStatus(bool flightStatus, string flightId)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("flightStatus", flightStatus),
+                new SqlParameter("flightId", flightId)
+            };
+            try
+            {
+                await _db.Database.ExecuteSqlRawAsync("sp_updateFlightStatus @flightStatus, @flightId", parameters);
                 return true;
             }catch(Exception ex)
             {

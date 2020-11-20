@@ -4,7 +4,10 @@ let initState = {
     isShowLoader: false,
     showBusiness: true,
     showEconomy: true,
-    showPremium: true
+    showPremium: true,
+    openBookingDetailModal: false,
+    openFlightTimeModal: false,
+    openEmployeeModal: false
 }
 
 let subStore = (state = initState, action) => {

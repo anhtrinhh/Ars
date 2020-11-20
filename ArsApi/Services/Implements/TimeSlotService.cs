@@ -16,6 +16,12 @@ namespace ArsApi.Services.Implements
             _repository = repository;
             _flightRepository = flightRepository;
         }
+
+        public async Task<bool> DeleteTimeSlot(int timeSlotId)
+        {
+            return await _repository.DeleteTimeSlot(timeSlotId);
+        }
+
         public async Task<IEnumerable<TimeSlot>> GetRestTimeSlotOfFlight(string startPointId, string endPointId, DateTime flightDate)
         {
             var timeSlotList = await _repository.GetTimeSlotByFlightDirection(startPointId, endPointId);
@@ -45,6 +51,21 @@ namespace ArsApi.Services.Implements
             }
 
             return timeSlots;
+        }
+
+        public async Task<IEnumerable<TimeSlot>> GetTimeSlotByFlightDirection(string startPointId, string endPointId)
+        {
+            return await _repository.GetTimeSlotByFlightDirection(startPointId, endPointId);
+        }
+
+        public async Task<bool> InsertTimeSlot(string startTime, string endTime, string startPointId, string endPointId)
+        {
+            return await _repository.InsertTimeSlot(startTime, endTime, startPointId, endPointId);
+        }
+
+        public async Task<bool> UpdateTimeSlot(int timeSlotId, string startTime, string endTime, string startPointId, string endPointId)
+        {
+            return await _repository.UpdateTimeSlot(timeSlotId, startTime, endTime, startPointId, endPointId);
         }
     }
 }

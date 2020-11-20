@@ -10,5 +10,6 @@ namespace ArsApi.Services
     {
         Task<string> InsertBooking(Booking booking);
         Task<IEnumerable<Booking>> GetBookingByCustomerNo(string customerNo);
+        Task<IEnumerable<Booking>> GetBookingByFlightId(string flightId);
     }
 }

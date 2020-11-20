@@ -5,7 +5,7 @@ import SummaryInfo from "../../components/flight/flight-summary-info";
 
 class FlightAdd extends React.Component {
     render() {
-        let {step} = this.props.match.params;
+        let { step } = this.props.match.params;
         return (
             <div className="content-wrapper">
                 <div className="content-header">
@@ -20,9 +20,9 @@ class FlightAdd extends React.Component {
                 <div className="content">
                     <div className="container-fluid">
                         {
-                            Number(step) === 1 ? <BasicInfo {...this.props} /> 
-                            : Number(step) === 2 ? <TicketInfo {...this.props} /> 
-                            : <SummaryInfo {...this.props}/>
+                            Number(step) === 1 ? <BasicInfo {...this.props} />
+                                : Number(step) === 2 ? <TicketInfo {...this.props} />
+                                    : <SummaryInfo {...this.props} />
                         }
                     </div>
                 </div>

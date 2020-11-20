@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Table, Label, Button } from "semantic-ui-react";
-import { getMediumTimeStr, subtractTime } from "../../utils/datetime-utils";
+import { Table, Label} from "semantic-ui-react";
+import FlightTableRow from "./flight-table-row";
+import {getShortDateStr} from "../../utils/datetime-utils"
 
 class FlightTable extends React.Component {
     render() {
         let { flights } = this.props;
+        let {flightDate} = this.props.match.params;
+        let isToday = getShortDateStr(new Date()) === flightDate;
         return flights.length > 0 ? (
-            <Table celled>
+            <Table celled className="flight-table">
                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell width="1">No</Table.HeaderCell>
@@ -15,30 +18,15 @@ class FlightTable extends React.Component {
                         <Table.HeaderCell width="2">Start time</Table.HeaderCell>
                         <Table.HeaderCell width="2">End time</Table.HeaderCell>
                         <Table.HeaderCell width="2">Flight times</Table.HeaderCell>
-                        <Table.HeaderCell>Status</Table.HeaderCell>
-                        <Table.HeaderCell width="3">Flight note</Table.HeaderCell>
-                        <Table.HeaderCell></Table.HeaderCell>
+                        <Table.HeaderCell width="1">Status</Table.HeaderCell>
+                        <Table.HeaderCell width="2">Flight note</Table.HeaderCell>
+                        <Table.HeaderCell width="1"></Table.HeaderCell>
+                        {isToday && <Table.HeaderCell>Mark departed</Table.HeaderCell>}
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
                     {flights.map((val, ix) => (
-                        <Table.Row key={ix}>
-                            <Table.Cell>{ix + 1}</Table.Cell>
-                            <Table.Cell>{val.flightId}</Table.Cell>
-                            <Table.Cell>{getMediumTimeStr(val.startTime)}</Table.Cell>
-                            <Table.Cell>{getMediumTimeStr(val.endTime)}</Table.Cell>
-                            <Table.Cell>{subtractTime(val.endTime, val.startTime)}</Table.Cell>
-                            <Table.Cell>
-                                {val.flightStatus
-                                    ? <Label color="green" style={{ cursor: "pointer" }}>Departed</Label>
-                                    : <Label style={{ cursor: "pointer" }}>Not departed</Label>}
-                            </Table.Cell>
-                            <Table.Cell>{val.flightNote}</Table.Cell>
-                            <Table.Cell>
-                                <Button color="yellow" size="mini">Edit</Button>
-                                <Button color="green" size="mini">Detail</Button>
-                            </Table.Cell>
-                        </Table.Row>
+                        <FlightTableRow flight={val} index={ix + 1} key={ix} flightDate={flightDate} />
                     ))}
                 </Table.Body>
             </Table>

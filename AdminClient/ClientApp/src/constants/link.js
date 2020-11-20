@@ -1,8 +1,8 @@
 export const sidebarLink = [
     {
-        label: "Home",
+        label: "Flight of the day",
         to: "/",
-        icon: "home",
+        icon: "plane",
         exact: true
     },
     {
@@ -12,21 +12,15 @@ export const sidebarLink = [
         exact: false
     },
     {
-        label: "Employee management",
-        to: "/employee-management",
-        icon: "users",
-        exact: true
-    },
-    {
         label: "Flight times management",
         to: "/flight-time-management",
         icon: "time",
         exact: true
     },
-    {
-        label: "Customer management",
-        to: "/customer-management",
+    /*{
+        label: "Employee management",
+        to: "/employee-management",
         icon: "users",
         exact: true
-    }
+    }*/
 ]

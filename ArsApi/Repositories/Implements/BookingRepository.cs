@@ -43,6 +43,15 @@ namespace ArsApi.Repositories.Implements
 
         }
 
+        public async Task<IEnumerable<Booking>> GetBookingByFlightId(string flightId)
+        {
+            var bookings = _db.Booking.Where(b => b.FlightId == flightId)
+                            .Include(b => b.Flight)
+                            .Include(b => b.Ticket)
+                            .OrderByDescending(b => b.CreatedAt);
+            return await bookings.ToListAsync();
+        }
+
         public async Task<bool> InsertBooking(Booking booking)
         {
             var parameters = new SqlParameter[]

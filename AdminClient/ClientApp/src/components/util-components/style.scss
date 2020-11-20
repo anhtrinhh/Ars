@@ -29,7 +29,7 @@
   }
 }
 .react-datepicker-popper {
-  z-index: 1035;
+  z-index: 7;
 }
 .datepicker-custom-header {
   display: flex;
@@ -48,5 +48,32 @@
   }
   select {
     outline: none;
+  }
+}
+.modal {
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  .actions {
+    .btn {
+      padding: 0.5rem 2.5rem;
+    }
+  }
+  .content {
+    .close {
+      float: none;
+    }
+    p {
+      font-weight: 600;
+    }
+  }
+  .header {
+    padding: 0.8rem 1.5rem !important;
+    i {
+      margin: 0 !important;
+      cursor: pointer;
+      user-select: none;
+    }
   }
 }

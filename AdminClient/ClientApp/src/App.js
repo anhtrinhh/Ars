@@ -10,6 +10,7 @@ import SideBar from "./components/side-bar";
 import Header from "./components/header";
 import { PRIVATE_ROUTES } from "./routes";
 import PrivateRouteAction from "./components/util-components/private-route-action";
+import InformModal from "./components/util-components/inform-modal";
 
 
 class App extends React.Component {
@@ -51,6 +52,7 @@ class App extends React.Component {
             </Switch>
             <div id="sidebar-overlay" onClick={() => this.setSidebarCollapse(!sidebarCollapse)}></div>
           </div>
+          <InformModal />
           {
             isShowLoader ? <Loader /> : ''
           }

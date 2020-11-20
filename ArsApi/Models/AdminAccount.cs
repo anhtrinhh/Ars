@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ArsApi.Models
 {
@@ -24,8 +25,9 @@ namespace ArsApi.Models
         public string CreatorId { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-
+        [JsonIgnore]
         public virtual AdminAccount Creator { get; set; }
+        [JsonIgnore]
         public virtual ICollection<AdminAccount> InverseCreator { get; set; }
     }
 }

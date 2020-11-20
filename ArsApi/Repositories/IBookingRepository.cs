@@ -12,6 +12,7 @@ namespace ArsApi.Repositories
         Task<bool> DeleteBooking(string bookingId);
 
         Task<IEnumerable<Booking>> GetBookingByCustomerNo(string customerNo);
+        Task<IEnumerable<Booking>> GetBookingByFlightId(string flightId);
 
     }
 }

@@ -23,6 +23,9 @@ let flightTicketInfo = (state = initState, action) => {
         case actionType.SET_FLIGHT_TICKET_INFO:
             state[action.index] = {...state[action.index], ...action.ticketInfo};
             return [...state];
+        case actionType.CLEAR_FLIGHT_TICKET_INFO:
+            state = [...initState];
+            return state;
         default:
             return state;
     }

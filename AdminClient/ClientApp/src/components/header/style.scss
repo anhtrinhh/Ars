@@ -2,7 +2,7 @@
 
 .main-header {
   border-bottom: 1px solid #dee2e6;
-  z-index: 1034;
+  z-index: 6;
   margin-left: 0;
   transition: margin-left .3s ease-in-out;
   @include Responsive(SM) {

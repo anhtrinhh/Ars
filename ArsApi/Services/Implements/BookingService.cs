@@ -20,7 +20,10 @@ namespace ArsApi.Services.Implements
         {
             return await _repository.GetBookingByCustomerNo(customerNo);
         }
-
+        public async Task<IEnumerable<Booking>> GetBookingByFlightId(string flightId)
+        {
+            return await _repository.GetBookingByFlightId(flightId);
+        }
         public async Task<string> InsertBooking(Booking booking)
         {
             booking.BookingId = AppUtils.CreateRandomString("B", 9);

@@ -9,5 +9,9 @@ namespace ArsApi.Repositories
     public interface ITimeSlotRepository
     {
         Task<IEnumerable<TimeSlot>> GetTimeSlotByFlightDirection(string startPointId, string endPointId);
+        Task<bool> InsertTimeSlot(string startTime, string endTime, string startPointId, string endPointId);
+        Task<bool> UpdateTimeSlot(int timeSlotId, string startTime, string endTime, string startPointId, string endPointId);
+
+        Task<bool> DeleteTimeSlot(int timeSlotId);
     }
 }

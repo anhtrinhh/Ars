@@ -35,7 +35,7 @@ class FlightSearch extends React.Component {
                 </div>
                 <div className="content">
                     <div className="container-fluid">
-                        <FlightTable />
+                        <FlightTable {...this.props} />
                     </div>
                 </div>
             </div>

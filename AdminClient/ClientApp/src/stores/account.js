@@ -8,7 +8,8 @@ let init = {
     adminPhoneNumber: null,
     adminGender: 0,
     adminAvatar: null,
-    adminBirthday: null
+    adminBirthday: null,
+    adminRights: null
 }
 
 let acc = JSON.parse(localStorage.getItem("account")) || JSON.parse(sessionStorage.getItem("account"));

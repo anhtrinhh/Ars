@@ -35,6 +35,26 @@ namespace ArsApi.Controllers
             }
             return response;
         }
+        [HttpPost]
+        public async Task<AdminAccount> Post(AdminAccount admin)
+        {
+            return await _service.InsertAdmin(admin);
+        }
+        [HttpGet]
+        public async Task<IEnumerable<AdminAccount>> Get()
+        {
+            return await _service.GetAllAdmin();
+        }
+        [HttpPut]
+        public async Task<AdminAccount> Put(AdminAccount admin)
+        {
+            return await _service.EditAdmin(admin);
+        }
+        [HttpDelete]
+        public async Task<AdminAccount> Delete(string adminId)
+        {
+            return await _service.DeleteAdmin(adminId);
+        }
         [Authorize]
         [HttpGet("getadmin")]
         public async Task<IActionResult> getAdmin()
@@ -54,7 +74,8 @@ namespace ArsApi.Controllers
                     admin.AdminEmail,
                     admin.AdminPhoneNumber,
                     admin.AdminGender,
-                    admin.AdminBirthday
+                    admin.AdminBirthday,
+                    admin.AdminRights
                 });
             }
             return response;

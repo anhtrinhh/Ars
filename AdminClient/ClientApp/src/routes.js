@@ -5,7 +5,11 @@ import Signin from "./pages/sign-in";
 import FlightManagement from "./pages/flight-management";
 import FlightSearch from "./pages/flight-management/flight-search";
 import FlightAdd from "./pages/flight-management/flight-add";
+import FlightDetail from "./pages/flight-management/flight-detail";
 import EmployeeManagement from "./pages/employee-management";
+import BookingManagement from "./pages/booking-management";
+import FlightTimeManagement from "./pages/flight-time-management";
+import FlightTimeDetail from "./pages/flight-time-management/flight-time-detail"
 
 
 export const PRIVATE_ROUTES = [
@@ -28,6 +32,26 @@ export const PRIVATE_ROUTES = [
         path: "/flight-management/add/:step(1|2|3)",
         exact: true,
         page: FlightAdd
+    },
+    {
+        path: "/flight-management/detail/:flightId",
+        exact: true,
+        page: FlightDetail
+    },
+    {
+        path: "/flight-management/bookings/:flightId",
+        exact: true,
+        page: BookingManagement
+    },
+    {
+        path: "/flight-time-management",
+        exact: true,
+        page: FlightTimeManagement
+    },
+    {
+        path: "/flight-time-management/:from/:to",
+        exact: true,
+        page: FlightTimeDetail
     },
     {
         path: "/employee-management",
